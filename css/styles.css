@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background: #232323;
+  background: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -222,7 +222,7 @@ h5 {
 }
 
 .deep-dark-bg {
-  background: #161616 !important;
+  background: #000 !important;
 }
 
 
@@ -371,6 +371,7 @@ header .phone-image img {
 header .intro-section .intro {
   color: #ffffff;
   margin-bottom: 36px;
+  text-align: center;
 }
 
 header .intro-section h5 {
@@ -522,4 +523,18 @@ div.only-logo {
 
 .hide-button {
   display: none;
+}
+
+.feature_imgs {
+  width: 2rem;
+  height: 2rem;
+  float: left;
+  /*margin-top: 0.5vh;*/
+}
+
+.feature-list p {
+  margin-left: 2rem;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  text-align: left;
 }
