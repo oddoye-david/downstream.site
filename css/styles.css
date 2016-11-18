@@ -372,6 +372,7 @@ header .intro-section .intro {
   color: #ffffff;
   margin-bottom: 36px;
   text-align: center;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 header .intro-section h5 {
@@ -537,4 +538,9 @@ div.only-logo {
   padding-left: 2rem;
   font-size: 1.5rem;
   text-align: left;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.feat_title {
+  font-family: 'Montserrat Alternates', sans-serif;
 }
