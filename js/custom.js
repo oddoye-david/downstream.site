@@ -34,34 +34,6 @@ jQuery(window).load(function () {
   init();
 })
 
-
-/* =================================
-===  STICKY NAV                 ====
-=================================== */
-
-$(document).ready(function () {
-  $('.main-navigation').onePageNav({
-    scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
-    scrollOffset: 60 //Height of Navigation Bar
-  });
-
-});
-
-/* =================================
-===  SMOOTH SCROLL             ====
-=================================== */
-var scrollAnimationTime = 1200,
-  scrollAnimation = 'easeInOutExpo';
-$('a.scrollto').bind('click.smoothscroll', function (event) {
-  event.preventDefault();
-  var target = this.hash;
-  $('html, body').stop().animate({
-    'scrollTop': $(target).offset().top
-  }, scrollAnimationTime, scrollAnimation, function () {
-    window.location.hash = target;
-  });
-});
-
 /* =================================
 ===  IE10 ON WINDOWS 8 FIX      ====
 =================================== */
