@@ -6,6 +6,21 @@ function mobilecheck() {
   return check;
 };
 
+function getUrlParameter(sParam) {
+  var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+    sURLVariables = sPageURL.split('&'),
+    sParameterName,
+    i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split('=');
+
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined ? true : sParameterName[1];
+    }
+  }
+};
+
 function init() {
   var isMobile = mobilecheck();
   var isAndroid = navigator.userAgent.match(/Android/i);
@@ -17,6 +32,12 @@ function init() {
   } else if (isMobile && isIOS) {
     // Hide Android Button
     $(".android-button").addClass('hide-button')
+  }
+
+  if ((isMobile && isAndroid) || (isMobile && isIOS)) {
+    console.log(getUrlParameter('song'));
+    var songId = getUrlParameter('song');
+    window.open('downstream://app/play-song/' + songId, '_blank');
   }
 }
 
@@ -45,36 +66,6 @@ $(document).ready(function () {
   });
 
 });
-
-/* NAVIGATION VISIBLE ON SCROLL */
-
-// $(document).ready(function () {
-//     mainNav();
-// });
-
-// $(window).scroll(function () {
-//     mainNav();
-// });
-
-// if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
-//   function mainNav() {
-//         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-//         if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
-
-//         else $('.sticky-navigation').stop().animate({"top": '-60'});
-//     }
-// }
-
-// if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
-//   function mainNav() {
-//         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-//         if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
-
-//         else $('.sticky-navigation').stop().animate({"top": '-120'});
-//     }
-// }
-
-
 
 /* =================================
 ===  SMOOTH SCROLL             ====
