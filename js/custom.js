@@ -35,6 +35,16 @@ jQuery(window).load(function () {
 })
 
 /* =================================
+===  WOW ANIMATION             ====
+=================================== */
+
+wow = new WOW(
+  {
+    mobile: false
+  });
+wow.init();
+
+/* =================================
 ===  IE10 ON WINDOWS 8 FIX      ====
 =================================== */
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
